@@ -5,10 +5,14 @@ var myElement = document.getElementById('myElement');
 var mc = new Hammer(myElement);
 
 // listen to events...
-mc.on("panleft panright", function(ev) {
+mc.on("swipeleft swiperight", function(ev) {
     myElement.textContent = ev.type +" gesture detected.";
 });
 
-mc.on("panup pandown tap press", function(ev) {
+mc.on("swipeup swipedown", function(ev) {
+    myElement.textContent = ev.type +" gesture detected.";
+});
+
+mc.on("tap press", function(ev) {
     myElement.textContent = ev.type +" gesture detected.";
 });
